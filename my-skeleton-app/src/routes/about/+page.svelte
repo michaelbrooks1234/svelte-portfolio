@@ -55,6 +55,10 @@
             I have a single end goal and that is to become a very good Software Engineer. I have a few things that I want to excel at specifically. #1 would be having job specific knowledge.
             I believe that I have already made leaps and bounds in this regards due to my professional experience, but I want to take a deeper dive on the technologies that I use to build out applications.
             End goal #2 would definitely be getting very good with Data Structures and Algorithms. This is just something I want to be good at. Here is some people that inspire me:
+            <span class="text-tertiary-500"><a class="underline" target="_blank" href="https://www.youtube.com/@ThePrimeagen">ThePrimeagen</a>, 
+              <a class="underline" target="_blank" href="https://www.youtube.com/@tmwilliamlin168">William Lin</a>, 
+              <a class="underline" target="_blank" href="https://www.youtube.com/@Fireship">Fireship</a>
+            </span>
           </span>
         </div>
       </div>

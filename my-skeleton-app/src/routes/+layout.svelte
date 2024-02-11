@@ -1,21 +1,16 @@
-<script lang="ts">
-	import '../app.postcss';
-	import { AppShell, AppBar, initializeStores, Drawer, getDrawerStore, Avatar } from '@skeletonlabs/skeleton';
-  import Navigation from '$lib/Navigation/Navigation.svelte';
-	
-	initializeStores();
-	const drawerStore = getDrawerStore();
-
-	function drawerOpen(): void {
-		drawerStore.open({});
-	}
-</script>
-
+<!-- drawer for app -->
 <Drawer>
 	<h2 class="p-4">Navigation</h2>
 	<hr />
 	<Navigation />
 </Drawer>
+
+<!-- toast notifications for app -->
+<Toast position="tr" background="variant-filled-success" buttonDismiss="" buttonDismissLabel="" />
+
+<!-- Modal -->
+<Modal components="{modalRegistry}" />
+
 <!-- App Shell -->
 <AppShell slotSidebarLeft="bg-surface-500/5 w-0 lg:w-64">
 	<svelte:fragment slot="header">
@@ -61,3 +56,22 @@
 </AppShell>
 <style lang="postcss">
 </style>
+<script lang="ts">
+	import '../app.postcss';
+	import { AppShell, AppBar, initializeStores, Drawer, getDrawerStore, Avatar, Toast, Modal, storePopup, type ModalComponent } from '@skeletonlabs/skeleton';
+	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
+  import Navigation from '$lib/Navigation/Navigation.svelte';
+	import projectModalPopup from './components/projectModalPopup.svelte';
+
+	const modalRegistry: Record<string, ModalComponent> = {
+		projectModalPopup: { ref: projectModalPopup },
+	};
+	
+	initializeStores();
+	const drawerStore = getDrawerStore();
+	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
+
+	function drawerOpen(): void {
+		drawerStore.open({});
+	}
+</script>
